@@ -1,4 +1,7 @@
 #!/bin/bash
+USERNAME="Priyanka"
+PASSWORD="Devops"
+
 echo "Please enter you Username: "
 read USERNAME
 echo "username entered = $USERNAME"
