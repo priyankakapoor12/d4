@@ -1,12 +1,17 @@
 #!/bin/bash
-USERNAME="Priyanka"
-PASSWORD="Devops"
 
-echo "Please enter you Username: "
+DEFAULT_USERNAME="Priyanka"
+DEFAULT_PASSWORD="Devops"
+
+echo -n "Please enter your Username (default: $DEFAULT_USERNAME): "
 read USERNAME
-echo "username entered = $USERNAME"
+USERNAME=${USERNAME:-$DEFAULT_USERNAME}
 
-echo "Please enter Password: "
+echo "Username entered = $USERNAME"
+
+echo -n "Please enter Password (default hidden): "
 read -s PASSWORD
 echo
+PASSWORD=${PASSWORD:-$DEFAULT_PASSWORD}
+
 echo "Password entered = $PASSWORD"
