@@ -1,17 +1,27 @@
 #!/bin/bash
 
-DEFAULT_USERNAME="Priyanka"
-DEFAULT_PASSWORD="Devops"
+# Set correct username and password
+CORRECT_USER="Priyanka"
+CORRECT_PASS="Devops"
 
-echo -n "Please enter your Username (default: $DEFAULT_USERNAME): "
+echo "Enter Username:"
 read USERNAME
-USERNAME=${USERNAME:-$DEFAULT_USERNAME}
 
-echo "Username entered = $USERNAME"
-
-echo -n "Please enter Password (default hidden): "
+echo -n "Enter Password: "
 read -s PASSWORD
 echo
-PASSWORD=${PASSWORD:-$DEFAULT_PASSWORD}
 
-echo "Password entered = $PASSWORD"
+# Username Check
+if [[ "$USERNAME" != "$CORRECT_USER" ]]; then
+    echo "❌ Incorrect Username!"
+    exit 1
+fi
+
+# Password Check
+if [[ "$PASSWORD" != "$CORRECT_PASS" ]]; then
+    echo "❌ Incorrect Password!"
+    exit 1
+fi
+
+echo "✅ Login Successful!"
+echo "Welcome, $USERNAME!"
